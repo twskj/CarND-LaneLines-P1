@@ -1,11 +1,5 @@
 #**Finding Lane Lines on the Road** 
 
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
@@ -21,13 +15,18 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+My pipeline consisted of 5 steps. 
+ 1. Converteing the images to grayscale
+ 2. Smoothing the edge using Gaussian blur
+ 3. Putting image to Canny algorithm to detect edges.
+ 4. Masking out using triangular shape
+ 5. Detecting lines using Hough Transform algorithm
+ 6. Averaging slope and intercept for left and right lane line
+ 8. Merging result to the original image
+ 9. Write result
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function by finding slope and intercept of each line. I then weighted average (based on length of each line).
 
 ![alt text][image1]
 
@@ -35,13 +34,13 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ###2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+One potential shortcoming would be what would happen when there's no line is detected.
+Another shortcoming could be when area of interest are not in the assumption space i.e. different mounting position of a camera.
 
 
 ###3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to enlarge area of edges. More lines means potential information.
+But also need to tune line detection parameter so that I don't get all the noises.
 
-Another potential improvement could be to ...
+Another potential improvement could be to use
