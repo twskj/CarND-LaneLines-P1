@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-My pipeline consisted of 5 steps. 
+My pipeline consisted of 8 steps. 
  1. Converteing the images to grayscale
  2. Smoothing the edge using Gaussian blur
  3. Putting image to Canny algorithm to detect edges.
@@ -23,10 +23,10 @@ My pipeline consisted of 5 steps.
  5. Detecting lines using Hough Transform algorithm
  6. Averaging slope and intercept for left and right lane line
  8. Merging result to the original image
- 9. Write result
+ 9. Write result to storage
 
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by finding slope and intercept of each line. I then weighted average (based on length of each line).
+In order to draw a single line on the left and right lanes, I added normalizLines function which finding and weighted average of slope and intercep. The result will be again average with the past 4 frames.
 
 ![alt text][image1]
 
@@ -36,6 +36,7 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 One potential shortcoming would be what would happen when there's no line is detected.
 Another shortcoming could be when area of interest are not in the assumption space i.e. different mounting position of a camera.
+Also if the vehicle move very fast the average might fail to reflect the situation.
 
 
 ###3. Suggest possible improvements to your pipeline
