@@ -15,18 +15,24 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-My pipeline consisted of 8 steps. 
- 1. Converteing the images to grayscale
+My pipeline consisted of 7 steps. 
+ 1. Converteing the images to grayscale 
+ ![Greyed Scale](report_images/1_greyed.png)
  2. Smoothing the edge using Gaussian blur
+ ![Gaussian Blur](report_images/2_blurred.png)
  3. Putting the image to Canny algorithm to detect edges.
- 4. Masking out using triangular shape where the tip is in the middle of the screen and the base are to bottom of the screen
+ ![Canny](report_images/3_edgeDetected.png)
+ 4. Masking using triangular shape where the tip is in the middle of the screen and the base are to bottom of the screen.
+ to take only the interested section
+ ![Greyed Image](report_images/4_masked.png)
  5. Detecting lines using Hough Transform algorithm
- 6. Filtering and averaging lines to get two final lines-- left and right lane mark
- 8. Merging result to the original image
+ ![Greyed Image](report_images/5_Hough.png)
+ 6. Filtering and averaging lines to get two final lines (the green line)
+ ![Greyed Image](report_images/6_average.png)
+ 7. Merging result to the original image
+ ![Greyed Image](report_images/7_overLayOriginal.png)
 
 In order to draw a single line on the left and right lanes, I start from filtering out noise (lines that are not lane line using a few pre-define conditions. I then average the valid lines to get the result lines. The result line will be add to history and average over 10 frames to get the final lines.
-
-![alt text][image1]
 
 
 ###2. Identify potential shortcomings with your current pipeline
