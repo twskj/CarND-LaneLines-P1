@@ -46,7 +46,4 @@ Lastly, the algorithm doesn't really have a concept of a "lane". It only detect 
 
 ###3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to enlarge area of edges. More lines means potential information.
-But also need to tune line detection parameter so that I don't get all the noises.
-
-To improve, all hard coding parameter need to be dynamic. Currently, a certain set of parameter is good for a bright and high contrast background but fail to detect lines when the lightning condition change such as going into a tunne shades from building and tree. It would be great if parameter is tune on the fly according to the environment instead of hand picking at compile time/coding time.
+To improve, all hard coding parametesr need to be dynamic. Currently, a certain set of parameter is good for a bright and high contrast background but fail to detect lines when the lightning condition change such as going into a tunne shades from building and tree. It would be great if parameter is tune on the fly according to the environment instead of hand picking at compile time/coding time.
